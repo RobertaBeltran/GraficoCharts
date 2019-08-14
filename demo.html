@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Acima da velocidade', 'Velocidade correta'],
+          ['50', 55,5],
+          ['100',55,5],
+          ['150', 5,5],
+          ['200', 5,5]
+        ]);
+
+        var options = {
+          title: 'Mortes em estradas',
+          hAxis: {title: 'velocidade',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+  </body>
+</html>
